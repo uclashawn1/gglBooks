@@ -1,8 +1,4 @@
 import React from "react";
-export * from "./Input";
-export * from "./TextArea";
-export * from "./FormBtn";
-
 
 
 function Form({ q, handleInputChange, handleFormSubmit }) {
