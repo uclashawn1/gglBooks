@@ -1,16 +1,19 @@
+const path = require("path");
 const router = require("express").Router();
 const bookRoutes = require("./books");
-const nytController = require("../../controllers/nytController");
+const googleRoutes = require("./google");
+
+
+
 // Book routes
 router.use("/books", bookRoutes);
-router.use("/nytArticles").get(nytController.findAll);
+
+// Google Routes
+router.use("/google", googleRoutes);
+
+// For anything else, render the html page
+router.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../../client/build/index.html"));
+});
 
 module.exports = router;
-
-// const router = require("express").Router();
-// const googleController = require("../../controllers/googleController");
-
-// // Matches with "/api/google"
-// router.route("/").get(googleController.findAll);
-
-// module.exports = router;
