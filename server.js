@@ -1,8 +1,4 @@
 const express = require("express");
-
-const book = require("models/book");
-
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -21,12 +17,11 @@ if (process.env.MONGODB_URI === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bookseeds");
-
-let db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'connection error:'));
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bookseeds",
+{
+  useCreateIndex: true,
+  useNewUrlParser: true
+});
 
 
 // Start the API server
