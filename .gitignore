@@ -1,5 +1,5 @@
 keys.js
-
+node_modules/
 src/*
 public/*
 build/static/css/*.map
