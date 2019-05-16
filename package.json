@@ -10,7 +10,7 @@
     "client": "cd googlebooks && npm run start",
     "install": "cd googlebooks && yarn install",
     "build": "cd googlebooks && npm run build",
-    "heroku-postbuild": "npm run install && npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
