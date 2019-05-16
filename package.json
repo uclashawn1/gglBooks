@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/uclashawn1/gglBooks#readme",
   "devDependencies": {
-    "concurrently": "^3.5.0",
+    "concurrently": "^3.6.1",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
